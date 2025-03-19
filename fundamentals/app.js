@@ -69,14 +69,14 @@ job = 'developer';
 lastName = 'Chowdhury';
 console.log(lastName);
 
-*/
+
 
 // Basic Operators
 // Math operators 
   
 const now = 2025;
 const ageNuru = now - 1997;
-const ageWife = now - 2005;
+const ageWife = now - 2020;
 console.log(ageNuru, ageWife);
 
 console.log(ageNuru * 2, ageNuru / 10, 2 ** 3);
@@ -95,3 +95,62 @@ x--; // x = x - 1 = 100
 x--;
 x--;
 console.log(x);
+
+// Comparison operators
+console.log(ageNuru > ageWife); // >graterthan, <lessthan, >=grater and equal, <=     
+console.log(ageWife >= 18);
+
+const isFullAge = ageWife >= 18;
+console.log(now - 1997 > now - 2020);
+
+
+// Operator Precedence
+
+const now = 2025;
+const ageNuru = now - 1997;
+const ageWife = now - 2005;
+console.log(ageNuru, ageWife);
+
+console.log(now - 1997 > now - 2020);
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+
+console.log(25 - 10 - 5);
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageNuru + ageWife) / 2;
+console.log(ageNuru, ageWife, averageAge);
+
+
+
+const firstName = 'Md. Nuruzzaman';
+const job = 'Developer';
+const birthYear = 1997;
+const year = 2025;
+
+const devnuru = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+console.log(devnuru);
+
+// Template literals
+
+const devnuruNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(devnuruNew);
+
+console.log(`Just 
+a 
+regular "Template Literal" 
+string...`);
+
+*/
+
+// Taking Decisions: if / else Statements
+
+const age = 15;
+const isOldEnough = age >= 18;
+
+if(isOldEnough) {
+ console.log('Md. Nuruzzaman can start driving license 🚗');
+}

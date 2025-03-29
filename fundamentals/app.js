@@ -288,3 +288,64 @@ switch(day) {
 // }
 
 // Statements and Expressions
+
+// An expression is a piece of code that produces a value. For example, 3 + 4 is an expression because it produces a value, which is 7.
+3 + 4
+1997
+true && false && !false
+
+if (53> 32) {
+    const str = "53 is greater than 32";    
+}
+const me = 'Md. Nuruzzaman';
+console.log(`I'm ${2037 - 1991} years old ${me}.`);
+
+
+// The conditional (Ternary) Operator
+
+const ageMe = 28;
+ageMe >= 18 ? console.log('I like to drink wine') : console.log('I like to drink watar');
+
+const drink = ageMe >= 18 ? 'wine' : 'watar';
+console.log(drink);
+
+let drink2;
+if (ageMe >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'watar';
+}
+console.log(drink2);
+
+console.log(`I like to drink ${ageMe >= 18 ? 'wine' : 'watar'}`);
+
+// The conditional (Ternary) Operator
+// The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute
+// if the condition is falsy. This operator is frequently used as a shortcut for the if statement.
+
+// The syntax is:
+// condition ? exprIfTrue : exprIfFalse
+
+// The conditional operator is frequently used as a shortcut for the if statement.
+
+// The following function uses an if statement to define a variable based on a condition:
+
+// function getFee(isMember) {
+//   return (isMember ? '$2.00' : '$10.00');
+// }
+
+
+// The following function accomplishes the same task but uses the conditional operator:
+
+// function getFee(isMember) {
+//   return isMember ? '$2.00' : '$10.00';
+// }
+
+// The two functions are equivalent. Each returns the string '$2.00' if the value of isMember is true, and '$10.00' if it is false.
+
+
+// Coding Challenge #4
+
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);

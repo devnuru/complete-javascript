@@ -126,5 +126,96 @@ function fruitProcessor(apples, oranges) {
  console.log(fruitProcessor(2, 3));
 
 
+const f1 = 'Md. Nuruzzaman Chowdhury';
+const f2 = 'Devnuru';
+const f3 = 'John';
+const f4 = 'Peter';
+const f5 = 'Steven';
+
+const friends = ["Md. Nuruzzaman Chowdhury", "Devnuru", "John", "Peter", "Steven"]
+console.log(friends);
+
+const years = new Array(1997, 1996, 1945, 2025);
+console.log(years[2]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';
+console.log(friends);
+//friends = ['Bob', 'Alice'] // We can't do that. It's illigal
+
+// diffrent types at the same time
+const firstName = "Md. Nuruzzaman Chowdhury";
+const devnuru = ['Nuruzzaman', 'Chowdhury', 2025 - 1997, 'teacher', friends]
+console.log(devnuru);
+console.log(devnuru.length);
+
+
+// Exersise
+const calcAge = function(birthYear) {
+    return 2025 - birthYear;
+}
+
+const yearsArr = [1991, 1971, 1992, 2000];
+
+console.log(calcAge(yearsArr)); // this will not work 
+
+const ageArr1 = calcAge(yearsArr[0]);
+const ageArr2 = calcAge(yearsArr[1]);
+const ageArrLast = calcAge(yearsArr[yearsArr.length - 1]);
+console.log(ageArr1, ageArr2, ageArrLast);
+
+const ages = [calcAge(yearsArr[0]), calcAge(yearsArr[1]), calcAge(yearsArr[yearsArr.length - 1])]
+console.log(ages);
+
+// JavaScript has some build in method these are called method
+// We can thinks methods as  Arrays operations 
+
+
+const car = ['Toyota', 'BMW', 'Volvo', 'Tesla'];
+
+// Add Elements 
+const newLenth = car.push('Mercedes'); // push method use to add new elements at the end of the array. It's tyically a function
+console.log(car);
+console.log(newLenth);
+
+// unshift method use to add a new elements to the beginning of the array
+car.unshift('Lamborgini');
+console.log(car);
+
+
+// Remove elemnts 
+car.pop() // Last elemnt remove
+const popped = car.pop() // Last elemnt remove
+console.log(car);
+console.log(popped);
+
+const shifted = car.shift(); // First elemnt remove
+console.log(shifted);
+console.log(car);
+
+// Which position certain elemnts 
+console.log(car.indexOf('BMW'));
+console.log(car.indexOf('Not Available in the array'));
+
+car.push(23)
+console.log(car.includes('BMW')); // true because it's available in the array
+console.log(car.includes('Nisan')); // False because it's not available in the array.
+console.log(car.includes('23')); // false cause it's strict equality. 
+console.log(car.includes(23)); // true number number. 
+
+
+if (car.includes('BMW')) {
+    console.log('You have a BMW Car');
+}
+
+
+
+
+
+
+
+
+
 
 

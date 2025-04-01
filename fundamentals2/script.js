@@ -210,6 +210,27 @@ if (car.includes('BMW')) {
 }
 
 
+// Array 
+const devnuruArr = [
+    'Nuruzzaman', 
+    'Chowdhury',
+    2025 - 1997,
+    'teacher',
+    ['Michel', 'Peter', 'Steven']
+];
+
+
+
+// object 
+const devnuruObj = {
+    firstName: 'Nuruzzaman',
+    lastName: 'Chowdhury',
+    age: 2025 - 1997,
+    job:  'Developer',
+    friends: ['Michel', 'Peter', 'Steven']
+}
+
+
 
 
 

@@ -222,6 +222,9 @@ const devnuruArr = [
 
 
 // object 
+
+// this is object litarel syntax
+
 const devnuruObj = {
     firstName: 'Nuruzzaman',
     lastName: 'Chowdhury',
@@ -229,6 +232,46 @@ const devnuruObj = {
     job:  'Developer',
     friends: ['Michel', 'Peter', 'Steven']
 }
+
+console.log(devnuruObj);
+
+// dot notation
+
+console.log(devnuruObj.firstName);
+// we can do same thing using bracket[]
+console.log(devnuruObj['lastName']);
+
+const nameKey = 'Name';
+console.log(devnuruObj['first' + nameKey]);
+console.log(devnuruObj['last' + nameKey]);
+
+// not work
+//console.log(devnuruObj. 'last' + nameKey);
+
+const interestedIn = prompt('What do you want to know about Devnuru? Choose between firstName, lastName, age, job, and friends')
+
+
+//console.log(devnuruObj[interestedIn]);
+
+if (devnuruObj[interestedIn]) {
+    console.log(devnuruObj[interestedIn]);
+} else {
+    console.log(
+      "Wrong request! Choose between firstName, lastName, age, job, and friends");
+}
+
+devnuruObj.location = 'Bangladesh';
+devnuruObj['gitHub'] = '@devnuru'
+console.log(devnuruObj);
+
+// Challenge
+// "Devnuru has 3 friends, and his best friend is called Michael"
+
+
+
+console.log(`${devnuruObj.firstName} has ${devnuruObj.friends.length} friends, and his best friend is called ${devnuruObj.friends[0]}`);
+
+
 
 
 

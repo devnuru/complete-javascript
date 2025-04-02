@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // So again, first strict mode forbids us to do certain things
 
@@ -8,6 +8,7 @@
 
 // more sucure code
 
+/*
 
 let hasDiverslicense = false;
 const passTest = true;
@@ -107,7 +108,7 @@ console.log(age3);
  console.log(yearUntilRetirement(1971, 'Jasim Chowdhury'));
  console.log(yearUntilRetirement(1997, 'Md. Nuruzzaman Chowdhury'));
 
- */
+
 
 
  function cutFruitPieces(fruit) {
@@ -230,7 +231,8 @@ const devnuruObj = {
     lastName: 'Chowdhury',
     age: 2025 - 1997,
     job:  'Developer',
-    friends: ['Michel', 'Peter', 'Steven']
+    friends: ['Michel', 'Peter', 'Steven'],
+    hasDiverslicense: true
 }
 
 console.log(devnuruObj);
@@ -271,15 +273,44 @@ console.log(devnuruObj);
 
 console.log(`${devnuruObj.firstName} has ${devnuruObj.friends.length} friends, and his best friend is called ${devnuruObj.friends[0]}`);
 
+ */
+
+const devnuruObj = {
+  firstName: "Nuruzzaman",
+  lastName: "Chowdhury",
+  birthYear: 1997,
+  job: "Developer",
+  friends: ["Michel", "Peter", "Steven"],
+  hasDiverslicense: true,
+
+  // Object Method
+  // Only function expression will work. Function decliration will not work
+
+  //   calcAge: function(birthYear) {
+  //    return 2027 - birthYear
+  //   }
+
+  // calcAge: function() {
+  //     // console.log(this);
+  //     return 2025 - this.birthYear
+  // }
+
+  calcAge: function () {
+    this.age = 2025 - this.birthYear;
+    return this.age;
+  },
+};
+
+console.log(devnuruObj.calcAge());
+
+console.log(devnuruObj.age);
+console.log(devnuruObj.age);
+console.log(devnuruObj.age);
+console.log(devnuruObj.age);
+
+// console.log(devnuruObj['calcAge'](1994));
 
 
-
-
-
-
-
-
-
-
+//Challenge
 
 

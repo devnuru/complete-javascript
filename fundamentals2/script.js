@@ -281,7 +281,7 @@ const devnuruObj = {
   birthYear: 1997,
   job: "Developer",
   friends: ["Michel", "Peter", "Steven"],
-  hasDiverslicense: true,
+  hasDiverslicense: false,
 
   // Object Method
   // Only function expression will work. Function decliration will not work
@@ -291,7 +291,7 @@ const devnuruObj = {
   //   }
 
   // calcAge: function() {
-  //     // console.log(this);
+  //      console.log(this);
   //     return 2025 - this.birthYear
   // }
 
@@ -299,6 +299,11 @@ const devnuruObj = {
     this.age = 2025 - this.birthYear;
     return this.age;
   },
+
+  getSummary: function() {
+    return `${devnuruObj.firstName} is a ${this.calcAge()} years old ${devnuruObj.job}, and he has ${this.hasDiverslicense ? 'a' : 'no'} driver's license.`;
+  }
+
 };
 
 console.log(devnuruObj.calcAge());
@@ -312,5 +317,8 @@ console.log(devnuruObj.age);
 
 
 //Challenge
+// Devnuru is a 28 years old teacher, and he has a driver's license"
+console.log(devnuruObj.getSummary());
+
 
 

@@ -50,9 +50,9 @@ scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
 
-*/
 
-'use strict'
+
+"use strict";
 
 const calcAverage = (p, q, r) => (p + q + r) / 3;
 console.log(calcAverage(3, 4, 5));
@@ -62,26 +62,24 @@ let scoreKoalas = calcAverage(65, 54, 49);
 console.log(scoreDolphins, scoreKoalas);
 
 const checkWinner = (avgDolhins, avgKoalas) => {
-    if (avgDolphins >= 2 * scoreKoalas ) {
-        console.log(`Dolhins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
-    } else if(avgKoalas >= 2 * scoreDolphins){
-        console.log(`Koalas win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
-
-    } else{
-        console.log("No team wins...");
-    }
+  if (avgDolphins >= 2 * scoreKoalas) {
+    console.log(`Dolhins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * scoreDolphins) {
+    console.log(`Koalas win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+  } else {
+    console.log("No team wins...");
+  }
 };
 
 checkWinner(scoreDolphins, scoreKoalas);
 checkWinner(576, 111);
 
-// test two 
+// test two
 // TEST DATA 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
 scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
-checkWinner(scoreDolphins, scoreKoalas)
-
+checkWinner(scoreDolphins, scoreKoalas);
 
 /*
 
@@ -112,4 +110,39 @@ checkWinner(scoreDolphins, scoreKoalas);
 
 */
 
+/* Write your code below. Good luck! 🙂 */
 
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function() {
+         this.bmi = this.mass / (this.height * this.height)
+        return this.bmi
+    }
+}
+
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    
+      calcBMI: function() {
+         this.bmi = this.mass / (this.height * this.height)
+        return this.bmi
+    }
+}
+
+mark.calcBMI();
+john.calcBMI();
+
+console.log(mark.bmi, john.bmi);
+
+if (john.bmi > mark.bmi) {
+    
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`);
+    
+} else if(mark.bmi > john.bmi) {
+     console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`);
+}

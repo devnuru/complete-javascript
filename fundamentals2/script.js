@@ -300,10 +300,11 @@ const devnuruObj = {
     return this.age;
   },
 
-  getSummary: function() {
-    return `${devnuruObj.firstName} is a ${this.calcAge()} years old ${devnuruObj.job}, and he has ${this.hasDiverslicense ? 'a' : 'no'} driver's license.`;
-  }
-
+  getSummary: function () {
+    return `${devnuruObj.firstName} is a ${this.calcAge()} years old ${
+      devnuruObj.job
+    }, and he has ${this.hasDiverslicense ? "a" : "no"} driver's license.`;
+  },
 };
 
 console.log(devnuruObj.calcAge());
@@ -315,10 +316,94 @@ console.log(devnuruObj.age);
 
 // console.log(devnuruObj['calcAge'](1994));
 
-
 //Challenge
 // Devnuru is a 28 years old teacher, and he has a driver's license"
 console.log(devnuruObj.getSummary());
 
+console.log("Lifting weights repetition 1 🏋️‍♀️");
+console.log("Lifting weights repetition 2 🏋️‍♀️");
+console.log("Lifting weights repetition 3 🏋️‍♀️");
+console.log("Lifting weights repetition 4 🏋️‍♀️");
+console.log("Lifting weights repetition 5 🏋️‍♀️");
+console.log("Lifting weights repetition 6 🏋️‍♀️");
+console.log("Lifting weights repetition 7 🏋️‍♀️");
+console.log("Lifting weights repetition 8 🏋️‍♀️");
+console.log("Lifting weights repetition 9 🏋️‍♀️");
+console.log("Lifting weights repetition 10 🏋️‍♀️");
+console.log("Lifting weights repetition 10 🏋️‍♀️");
 
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+const devnuruArray = [
+  "Md. Nuruzzaman",
+  "Chowdhury",
+  2025 - 1997,
+  "Developer",
+  ["Micheal", "Peter", "Steven"],
+  true,
+  'Devnuru',
+  
+  
+];
+
+const types = [];
+
+
+
+// console.log(devnuruArray[0]);
+// console.log(devnuruArray[1]);
+// console.log(devnuruArray[2]);
+// ...
+// console.log(devnuruArray[4]);
+// devnuruArray[5] = 'Devnuru';
+// devnuruArray[5] doese not exist yet
+
+for(let i = 0; i < devnuruArray.length; i++) {
+  // Reading from devnuruArray
+ console.log(devnuruArray[i], typeof devnuruArray[i]);
+
+ // Filling types array
+//  types[i] = typeof devnuruArray[i];
+ types.push(typeof devnuruArray[i]);
+}
+
+// typesp[0] = 'string';
+
+console.log(types);
+
+const years = [1991, 1997, 1996, 2000];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+ages.push(2025 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+// So continue is to exit the current iteration of the loop and continue to the next one.
+
+// On the other hand, break is used to completely terminate the whole loop.
+console.log("---- ONLY STRINGS ----");
+for (let i = 0; i < devnuruArray.length; i++) {
+  // with continue we can exit the current iteration of the loop
+  if (typeof devnuruArray[i] !== "string") continue;
+  
+ console.log(devnuruArray[i], typeof devnuruArray[i]);
+  
+}
+
+console.log("---- BREAK WITH NUMBER ----");
+for (let i = 0; i < devnuruArray.length; i++) {
+  // with continue we can exit the current iteration of the loop
+  // but with break we can exit the whole loop
+  // So here we want to break the loop as soon as we find a number
+  // So we can use break to exit the loop 
+
+  if (typeof devnuruArray[i] === "number") break;
+
+  console.log(devnuruArray[i], typeof devnuruArray[i]);
+}
 

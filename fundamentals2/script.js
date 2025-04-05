@@ -345,7 +345,7 @@ const devnuruArray = [
   ["Micheal", "Peter", "Steven"],
   true,
   'Devnuru',
-  
+
   
 ];
 
@@ -406,4 +406,71 @@ for (let i = 0; i < devnuruArray.length; i++) {
 
   console.log(devnuruArray[i], typeof devnuruArray[i]);
 }
+
+// Looping Backwards and Loops in Loops
+const devnuruArray2 = [
+  "Md. Nuruzzaman",
+  "Chowdhury",
+  2025 - 1997,
+  "Developer",
+  ["Micheal", "Peter", "Steven"],
+  true
+];
+
+// 0, 1, 2 ... 4
+// 4, 3, 2 ... 0
+
+for (let i =  devnuruArray2.length - 1; i >= 0; i--) {
+  console.log(i, devnuruArray2[i]);
+}
+
+// Nested Loop
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`---------Starting exercise ${exercise} 🏋️‍♀️`);
+
+  for (let rep = 1; rep <= 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`);
+  }
+
+}
+
+// While Loop
+// So the while loop is a little bit different. So the while loop will keep running as long as the condition is true.
+// rep = rep + 1;
+// rep += 1;
+// rep++
+// rep--
+// Loops can execute a block of code as long as a specified condition is true.
+let rep = 1;
+while (rep <= 10) {
+//  console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+ rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// The Math.trunc() method returns the integer part of a number.
+// The Math.trunc() method removes the decimals (does NOT round the number).
+console.log(dice);
+
+while(dice !== 6) {
+  console.log(`You rolled a ${dice} 🥳`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log(`Loop is about to end...`);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

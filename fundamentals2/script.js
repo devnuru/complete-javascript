@@ -344,14 +344,10 @@ const devnuruArray = [
   "Developer",
   ["Micheal", "Peter", "Steven"],
   true,
-  'Devnuru',
-
-  
+  "Devnuru",
 ];
 
 const types = [];
-
-
 
 // console.log(devnuruArray[0]);
 // console.log(devnuruArray[1]);
@@ -361,13 +357,13 @@ const types = [];
 // devnuruArray[5] = 'Devnuru';
 // devnuruArray[5] doese not exist yet
 
-for(let i = 0; i < devnuruArray.length; i++) {
+for (let i = 0; i < devnuruArray.length; i++) {
   // Reading from devnuruArray
- console.log(devnuruArray[i], typeof devnuruArray[i]);
+  console.log(devnuruArray[i], typeof devnuruArray[i]);
 
- // Filling types array
-//  types[i] = typeof devnuruArray[i];
- types.push(typeof devnuruArray[i]);
+  // Filling types array
+  //  types[i] = typeof devnuruArray[i];
+  types.push(typeof devnuruArray[i]);
 }
 
 // typesp[0] = 'string';
@@ -378,7 +374,7 @@ const years = [1991, 1997, 1996, 2000];
 const ages = [];
 
 for (let i = 0; i < years.length; i++) {
-ages.push(2025 - years[i]);
+  ages.push(2025 - years[i]);
 }
 console.log(ages);
 
@@ -390,9 +386,8 @@ console.log("---- ONLY STRINGS ----");
 for (let i = 0; i < devnuruArray.length; i++) {
   // with continue we can exit the current iteration of the loop
   if (typeof devnuruArray[i] !== "string") continue;
-  
- console.log(devnuruArray[i], typeof devnuruArray[i]);
-  
+
+  console.log(devnuruArray[i], typeof devnuruArray[i]);
 }
 
 console.log("---- BREAK WITH NUMBER ----");
@@ -400,7 +395,7 @@ for (let i = 0; i < devnuruArray.length; i++) {
   // with continue we can exit the current iteration of the loop
   // but with break we can exit the whole loop
   // So here we want to break the loop as soon as we find a number
-  // So we can use break to exit the loop 
+  // So we can use break to exit the loop
 
   if (typeof devnuruArray[i] === "number") break;
 
@@ -414,13 +409,13 @@ const devnuruArray2 = [
   2025 - 1997,
   "Developer",
   ["Micheal", "Peter", "Steven"],
-  true
+  true,
 ];
 
 // 0, 1, 2 ... 4
 // 4, 3, 2 ... 0
 
-for (let i =  devnuruArray2.length - 1; i >= 0; i--) {
+for (let i = devnuruArray2.length - 1; i >= 0; i--) {
   console.log(i, devnuruArray2[i]);
 }
 
@@ -432,7 +427,6 @@ for (let exercise = 1; exercise <= 3; exercise++) {
   for (let rep = 1; rep <= 6; rep++) {
     console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`);
   }
-
 }
 
 // While Loop
@@ -444,8 +438,8 @@ for (let exercise = 1; exercise <= 3; exercise++) {
 // Loops can execute a block of code as long as a specified condition is true.
 let rep = 1;
 while (rep <= 10) {
-//  console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
- rep++;
+  //  console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+  rep++;
 }
 
 let dice = Math.trunc(Math.random() * 6) + 1;
@@ -453,24 +447,10 @@ let dice = Math.trunc(Math.random() * 6) + 1;
 // The Math.trunc() method removes the decimals (does NOT round the number).
 console.log(dice);
 
-while(dice !== 6) {
+while (dice !== 6) {
   console.log(`You rolled a ${dice} 🥳`);
   dice = Math.trunc(Math.random() * 6) + 1;
   if (dice === 6) {
     console.log(`Loop is about to end...`);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

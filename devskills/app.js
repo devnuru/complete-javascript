@@ -1,8 +1,8 @@
 'use strict';
 
 const xyz = 'Hello JavaScript!';
-if (x === 'Hello JavaScript!') {
-  console.log(x);
+if (xyz === 'Hello JavaScript!') {
+  console.log(xyz);
 }
 
 const calcAge = birthYear => {

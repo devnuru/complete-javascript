@@ -33,5 +33,7 @@ document.addEventListener('keydown', function(e) {
     //  }
 
     closeModal();
+    } else if(e.key === 'Enter' && modal.classList.contains('hidden')){
+      openModal()
     }
 })

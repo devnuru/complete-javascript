@@ -48,41 +48,61 @@ const restaurant = {
   },
 };
 
+// The Nullish Coalescing Operator (??)
+// introduce in ES 2020
+// The Nullish Coalescing Operator (??) in JavaScript (and TypeScript) is a logical operator that returns the right-hand operand when the left-hand operand is null or undefined, and otherwise returns the left-hand operand.
+
+// restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: null and undefined (Not 0 or '')
+const guestNullish = restaurant.numGuests ?? 10;
+console.log(guestNullish);
+
+let a = null;
+let b = 29;
+let result = a ?? b;
+console.log(result);
+
+// Behavior:
+// 	•	If a is not null or undefined, result will be a.
+// 	•	If a is null or undefined, result will be b.
+
 // Short Circuiting (&& and ||)
 
 // Short-circuiting with && and || in JavaScript is a common and powerful feature, especially useful for writing concise conditional logic.
 
-console.log('========OR=================');
+// console.log('========OR=================');
 
-// They can use ANY data type,
-// They can return any data type
-// They do something call short circuiting evaluation
-console.log(3 || 'Devnuru'); // 3   in the || if the first value is truethy then the scond operand will not evaluate
-console.log('' || 'Devnuru'); // Devnuru
-console.log(true || 0); // true
-console.log(undefined || null); // null
-console.log(undefined || 0 || '' || 'Hello' || 37 || null); // Hello
+// // They can use ANY data type,
+// // They can return any data type
+// // They do something call short circuiting evaluation
+// console.log(3 || 'Devnuru'); // 3   in the || if the first value is truethy then the scond operand will not evaluate
+// console.log('' || 'Devnuru'); // Devnuru
+// console.log(true || 0); // true
+// console.log(undefined || null); // null
+// console.log(undefined || 0 || '' || 'Hello' || 37 || null); // Hello
 
-// restaurant.numGuests = 0;
-const guest1 = restaurant.numGuests ? restaurant.numGuests : 20
-console.log(guest1);
+// // restaurant.numGuests = 0;
+// const guest1 = restaurant.numGuests ? restaurant.numGuests : 20
+// console.log(guest1);
 
-const guest2 = restaurant.numGuests || 200
-console.log(guest2);
+// const guest2 = restaurant.numGuests || 200
+// console.log(guest2);
 
+// console.log('========AND=================');
+// console.log(0 && 'Devnuru');  // 0
+// console.log(7 && 'Devnuru'); // devnuru
 
-console.log('========AND=================');
-console.log(0 && 'Devnuru');  // 0
-console.log(7 && 'Devnuru'); // devnuru
+// console.log('Hello' && 74 && null & 'Devnuru'); // null
 
-console.log('Hello' && 74 && null & 'Devnuru'); // null
+// // Practical example
+// if(restaurant.orderPizza) {
+//   restaurant.orderPizza('Mushrooms', 'spinach');
+// }
 
-// Practical example
-if(restaurant.orderPizza) {
-  restaurant.orderPizza('Mushrooms', 'spinach');
-}
-
-restaurant.orderPizza && restaurant.orderPizza('Mushrooms', 'spinach');
+// restaurant.orderPizza && restaurant.orderPizza('Mushrooms', 'spinach');
 
 // Common Use Cases:
 // 1. Default values with ||
@@ -91,24 +111,9 @@ restaurant.orderPizza && restaurant.orderPizza('Mushrooms', 'spinach');
 // 2. Conditional execution with &&:
 // isLoogedIn && showDashboard()
 
-// Safe access 
+// Safe access
 // const bio = user && user.profile && user.profile.bio
 // (Though now you’d use optional chaining instead: user?.profile?.bio)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ////////////////////////////////
 // Rest Pattern and Parameters

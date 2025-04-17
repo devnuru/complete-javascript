@@ -48,6 +48,45 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+   name: 'Capri',
+  //  numGuests: 28
+   numGuests: 0
+}
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Md. Nuruzzaman Chowdhury'
+}
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10
+// rest2.numGuests ||= 10
+
+// nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// rest1.owner = rest1.owner && '<ANONYMOUS>'
+// rest2.owner = rest2.owner && '<ANONYMOUS>'
+rest1.owner &&= '<ANONYMOUS>'; 
+rest2.owner &&= '<ANONYMOUS>'; 
+
+
+
+console.log(rest1);
+console.log(rest2);
+
+
+
+
+
+
+/*
+/////////////////////////////////////////
+
 // The Nullish Coalescing Operator (??)
 // introduce in ES 2020
 // The Nullish Coalescing Operator (??) in JavaScript (and TypeScript) is a logical operator that returns the right-hand operand when the left-hand operand is null or undefined, and otherwise returns the left-hand operand.
@@ -64,6 +103,8 @@ let a = null;
 let b = 29;
 let result = a ?? b;
 console.log(result);
+
+*/
 
 // Behavior:
 // 	•	If a is not null or undefined, result will be a.

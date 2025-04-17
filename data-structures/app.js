@@ -42,52 +42,58 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
-  orderPizza: function(mainIngredient, ...otherIngredients) {
-  console.log(mainIngredient);
-  console.log(otherIngredients);
-  }
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+// Short Circuiting (&& and ||)
 
-// 1) Destructuring 
+// Short-circuiting with && and || in JavaScript is a common and powerful feature, especially useful for writing concise conditional logic.
 
-	// •	Spread = “Expands”
-	// •	Rest = “Collects” Compress
+console.log('========OR=================');
 
-  // Spread, because on right side of =
+// They can use ANY data type,
+// They can return any data type
+// They do something call short circuiting evaluation
+console.log(3 || 'Devnuru'); // 3   in the || if the first value is truethy then the scond operand will not evaluate
+console.log('' || 'Devnuru'); // Devnuru
+console.log(true || 0); // true
+console.log(undefined || null); // null
+console.log(undefined || 0 || '' || 'Hello' || 37 || null); // Hello
 
-  // Arrays
-  const arr = [1, 2, ...[3, 4]]
+// restaurant.numGuests = 0;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 20
+console.log(guest1);
 
-  const [a, b, ...othersNum] = [1, 2, 3, 4, 5];
-  console.log(a, b, othersNum);
-
-  const [pizza, , risotto, ...othersFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
-  console.log(pizza, risotto, othersFood);
-
-  // Objects
-
-  const {sat, ...weekdays} = restaurant.openingHours;
-  console.log(weekdays);
-
-  // 2) Functions
-  const add = function(...numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-    console.log(sum)
-    ;
-   //console.log(numbers);
-  }
-  add(2, 4);
-  add(6, 8, 3);
-  add(3, 5, 6, 8);
-
-  const x = [33, 6, 8];
-  add(...x)
+const guest2 = restaurant.numGuests || 200
+console.log(guest2);
 
 
-  restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-  restaurant.orderPizza('mushrooms')
+console.log('========AND=================');
+console.log(0 && 'Devnuru');  // 0
+console.log(7 && 'Devnuru'); // devnuru
+
+console.log('Hello' && 74 && null & 'Devnuru'); // null
+
+// Practical example
+if(restaurant.orderPizza) {
+  restaurant.orderPizza('Mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('Mushrooms', 'spinach');
+
+// Common Use Cases:
+// 1. Default values with ||
+// const port = process.env.PORT || 3000;
+
+// 2. Conditional execution with &&:
+// isLoogedIn && showDashboard()
+
+// Safe access 
+// const bio = user && user.profile && user.profile.bio
+// (Though now you’d use optional chaining instead: user?.profile?.bio)
 
 
 
@@ -97,6 +103,53 @@ const restaurant = {
 
 
 
+
+
+
+
+
+
+
+////////////////////////////////
+// Rest Pattern and Parameters
+// 1) Destructuring
+
+// •	Spread = “Expands”
+// •	Rest = “Collects” Compress
+
+// Spread, because on right side of =
+
+// Arrays
+// const arr = [1, 2, ...[3, 4]]
+
+// const [a, b, ...othersNum] = [1, 2, 3, 4, 5];
+// console.log(a, b, othersNum);
+
+// const [pizza, , risotto, ...othersFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+// console.log(pizza, risotto, othersFood);
+
+// // Objects
+
+// const {sat, ...weekdays} = restaurant.openingHours;
+// console.log(weekdays);
+
+// // 2) Functions
+// const add = function(...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum)
+//   ;
+//  //console.log(numbers);
+// }
+// add(2, 4);
+// add(6, 8, 3);
+// add(3, 5, 6, 8);
+
+// const x = [33, 6, 8];
+// add(...x)
+
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms')
 
 ////////////////////////////////////////////////////
 // The Spread Operator

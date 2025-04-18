@@ -48,6 +48,48 @@ const restaurant = {
   },
 };
 
+// The for...of loop in JavaScript is used to iterate over iterable objects — such as arrays, strings, maps, sets, and more.
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// for (const element of object) {
+  
+// }
+
+for (const item of menu) {
+  console.log(item);
+  
+}
+
+for (const [i, el] of menu.entries()) {
+  // console.log(`${item[0] +1}: ${item[1]}`);
+  console.log(`${i +1}: ${el}`);
+
+}
+
+// console.log(...menu.entries());
+
+// for (const item of iterable) {
+//   // code block to execute
+// }
+
+
+// const fruits = ['apple', 'banana', 'cherry']
+//  for (const fruit of fruits) {
+//    console.log(fruit);  
+//  }
+
+
+
+
+
+
+
+
+
+/*
+
 const rest1 = {
    name: 'Capri',
   //  numGuests: 28
@@ -80,6 +122,8 @@ console.log(rest1);
 console.log(rest2);
 
 
+
+*/
 
 
 

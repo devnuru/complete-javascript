@@ -1,32 +1,43 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+};
+
 const restaurant = {
   name: 'Foodsbd LTD',
   location: 'Jaldhaka, Nilphamari, Bangladesh',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Capress Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: {
-        open: 0, // Open 24 hours
-        close: 24,
-      },
-    },
-  },
 
-  order: function (starterIndex, mainIndex) {
+  // before es6
+  // openingHours: openingHours,
+
+  // ES6 enhanced object literals
+  openingHours,
+
+  // order: function (starterIndex, mainIndex) {
+  //   return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  // },
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery: function ({
+  orderDelivery({
     starterIndex = 1,
     mainIndex = 0,
     time = '20:00',
@@ -37,12 +48,12 @@ const restaurant = {
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
@@ -50,23 +61,23 @@ const restaurant = {
 
 // The for...of loop in JavaScript is used to iterate over iterable objects — such as arrays, strings, maps, sets, and more.
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-// console.log(menu);
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// // console.log(menu);
 
-// for (const element of object) {
-  
+// // for (const element of object) {
+
+// // }
+
+// for (const item of menu) {
+//   console.log(item);
+
 // }
 
-for (const item of menu) {
-  console.log(item);
-  
-}
+// for (const [i, el] of menu.entries()) {
+//   // console.log(`${item[0] +1}: ${item[1]}`);
+//   console.log(`${i +1}: ${el}`);
 
-for (const [i, el] of menu.entries()) {
-  // console.log(`${item[0] +1}: ${item[1]}`);
-  console.log(`${i +1}: ${el}`);
-
-}
+// }
 
 // console.log(...menu.entries());
 
@@ -74,19 +85,10 @@ for (const [i, el] of menu.entries()) {
 //   // code block to execute
 // }
 
-
 // const fruits = ['apple', 'banana', 'cherry']
 //  for (const fruit of fruits) {
-//    console.log(fruit);  
+//    console.log(fruit);
 //  }
-
-
-
-
-
-
-
-
 
 /*
 
@@ -124,9 +126,6 @@ console.log(rest2);
 
 
 */
-
-
-
 
 /*
 /////////////////////////////////////////

@@ -1,18 +1,3 @@
-Category: Front-end Development 
+https://www.figma.com/design/y0VVZv43Rykbt5wt88piPI/gelato--Copy-?node-id=59-2&p=f&t=MpSTq37AnV40EXGj-0
 
-Job Title: Experienced reactjs/nextjs Developer Needed
-Job Description: We’re looking for an experienced ReactJS/NextJS developer to build a small responsive web app. Must be skilled in modern JavaScript, Typescript, API integration, and deploying with Vercel. Designs will be provided.
-
-Must-Have Skills:
-5+ years of frontend development experience
-ReactJS and TypeScript expertise
-HTML, CSS, JavaScript (Strong proficiency)
-Experience with Redux
-Agile and Scrum methodology knowledge
-Excellent communication skills (Verbal & Written – Fluent English)
-
-
-Tags: HTML, CSS, JavaScript, TypeScript, Nodejs, Reactjs, Nextjs, tailwindcss, Redux
-
-
-From USA client Account
+Here is the figma design I want to build pixel perfect web app using reactjs, naxtjs

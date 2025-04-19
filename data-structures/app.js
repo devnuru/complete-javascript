@@ -1,6 +1,15 @@
 'use strict';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const style = `
+background:hotpink;
+padding: 20px;
+font-weight: 900;
+font-size:2rem;
+`;
+
+console.log(`%cDon't Paste any code here.`, style);
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
     open: 12,
@@ -37,12 +46,7 @@ const restaurant = {
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
@@ -58,6 +62,46 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+//Optional Chaining (?.)
+
+// console.log(restaurant.openingHours.mon.open);
+
+// if(restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+// without optional chaining
+// console.log(restaurant.openingHours.mon.open);
+// with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist') ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // The for...of loop in JavaScript is used to iterate over iterable objects — such as arrays, strings, maps, sets, and more.
 

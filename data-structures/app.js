@@ -83,25 +83,17 @@ for (const day of days) {
   console.log(`On ${day}, we open at ${open}`);
 }
 
-
 // Methods
 console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist') ;
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 
+// Arrays
+// const users = [{ name: 'Devnuru', email: 'hello@devnuru.com' }];
+const users = []
 
+console.log(users[0]?.name ?? 'User array empty');
 
-
-
-
-
-
-
-
-
-
-
-
-
+if (users.length > 0) console.log(users[0].name); else console.log('user array empty');
 
 // The for...of loop in JavaScript is used to iterate over iterable objects — such as arrays, strings, maps, sets, and more.
 

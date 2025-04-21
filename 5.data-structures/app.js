@@ -9,6 +9,24 @@ font-size:2rem;
 
 console.log(`%cDon't Paste any code here.`, style);
 
+// const italianFoods = new Set([
+//   'pasta',
+//   'gnocchi',
+//   'tomatoes',
+//   'olive oil',
+//   'garlic',
+//   'basil'
+// ]);
+
+// const mexicanFoods = new Set([
+//   'tortillas',
+//   'beans',
+//   'rice',
+//   'tomatoes',
+//   'avocado',
+//   'garlic'
+// ]);
+
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -63,6 +81,50 @@ const restaurant = {
   },
 };
 
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+// intersection methods
+
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log('Intersection:', commonFoods);
+console.log([...commonFoods]);
+
+// union methods
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log('Union:', italianMexicanFusion);
+console.log([...italianFoods, ...mexicanFoods]);
+console.log(new Set([...italianFoods, ...mexicanFoods]));
+console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+//difference
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+console.log('Difference italian', uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+console.log('Difference mexican', uniqueMexicanFoods);
+
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+console.log(uniqueItalianAndMexicanFoods);
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
 // Sets
 
 // “JavaScript Set” is a built-in object that lets you store unique values of any type—whether primitive values or object references.
@@ -114,8 +176,7 @@ console.log(
 
 console.log(new Set('Md. Nuruzzaman Chowdhury').size);
 
-
-
+// 7 more methods
 
 /*
 

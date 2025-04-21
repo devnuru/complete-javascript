@@ -126,7 +126,7 @@ const books = [
         fiveStarRatingCount: 728,
         oneStarRatingCount: 65,
       },
-    },
+   },
   },
   {
     title: 'Engineering Mathematics',

@@ -63,6 +63,63 @@ const restaurant = {
   },
 };
 
+// Sets
+
+// “JavaScript Set” is a built-in object that lets you store unique values of any type—whether primitive values or object references.
+
+// 🧠 Key Features:
+// 	•	Stores unique values only (no duplicates).
+// 	•	Maintains insertion order.
+// 	•	Has built-in methods to add, delete, and check values.
+
+// Sets aree also itarable
+
+//const mySet = new Set();
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+
+console.log(new Set('Devnuru'));
+
+console.log(new Set());
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear()
+console.log(orderSet);
+console.log(orderSet.size);
+
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const uniqueStaff = [...new Set(staff)];
+console.log(uniqueStaff);
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('Md. Nuruzzaman Chowdhury').size);
+
+
+
+
+/*
+
+
 //Optional Chaining (?.)
 
 // console.log(restaurant.openingHours.mon.open);
@@ -89,11 +146,15 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 
 // Arrays
 // const users = [{ name: 'Devnuru', email: 'hello@devnuru.com' }];
-const users = []
+const users = [];
 
 console.log(users[0]?.name ?? 'User array empty');
 
-if (users.length > 0) console.log(users[0].name); else console.log('user array empty');
+if (users.length > 0) console.log(users[0].name);
+else console.log('user array empty');
+
+
+*/
 
 // The for...of loop in JavaScript is used to iterate over iterable objects — such as arrays, strings, maps, sets, and more.
 

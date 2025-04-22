@@ -134,7 +134,7 @@ console.log(italianFoods.isDisjointFrom(mexicanFoods));
 // 	•	Maintains insertion order.
 // 	•	Has built-in methods to add, delete, and check values.
 
-// Sets aree also itarable
+// Sets are also iterable
 
 //const mySet = new Set();
 

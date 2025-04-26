@@ -111,6 +111,12 @@ function count() {
 
 */
 
+
+
+
+// Functions Accepting Callback Functions
+/*
+
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -140,9 +146,29 @@ document.body.addEventListener('click', heyDevnuru);
 ['Devnuru', 'Martha', 'Adam'].forEach(heyDevnuru);
 
 
+*/
 
 
+//Functions Returning Functions
 
+const greet = function(greeting) {
+  return function(name) {
+    console.log(`${greeting} ${name}`);
+  }
+}
+
+const greeterHey = greet('Hey');
+greeterHey('Md. Nuruzzaman Chowdhury');
+greeterHey('Devnuru')
+
+greet('Hello')('Chowdhury Nuru');
+
+// Arrow Function
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+const greeterArrHey = greetArr('Hello');
+greeterArrHey('Wife');
+greetArr('Hey')('Chowdhury')
 
 
 

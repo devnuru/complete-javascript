@@ -70,6 +70,7 @@ createBooking('LH1234', undefined, 800);
 
 // *** Functions are just another type of object
 
+/*
 
 // ** Store functions in variables or properties
 const add = (a, b) => a + b;
@@ -107,5 +108,55 @@ function count() {
         counter++;
     }
 }
+
+*/
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-order function
+const transformer = function (str, fnt) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fnt(str)}`);
+
+  console.log(`Transformed by: ${fnt.name}`);
+};
+
+transformer('JavaScript is the best', upperFirstWord);
+transformer('JavaScript is the best', oneWord);
+
+// JS uses callback all the time
+const heyDevnuru = function () {
+  console.log('👋🏻');
+};
+document.body.addEventListener('click', heyDevnuru);
+
+['Devnuru', 'Martha', 'Adam'].forEach(heyDevnuru);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -151,6 +151,8 @@ document.body.addEventListener('click', heyDevnuru);
 
 //Functions Returning Functions
 
+/*
+
 const greet = function(greeting) {
   return function(name) {
     console.log(`${greeting} ${name}`);
@@ -169,6 +171,68 @@ const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 const greeterArrHey = greetArr('Hello');
 greeterArrHey('Wife');
 greetArr('Hey')('Chowdhury')
+
+*/
+
+// The call and apply methods
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function(flightNum, name) {}
+  book(flightNum, name){
+    console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
+
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  }
+};
+
+lufthansa.book(623, 'Md. Nuruzzaman Chowdhury');
+lufthansa.book(739, 'John Smith');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: []
+}
+
+const book = lufthansa.book;
+
+//Does not work
+// book(73, 'Sarah Williams');
+
+
+// Call method
+book.call(eurowings, 38, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 7823, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air lines',
+  iataCode: 'LX',
+  bookings: [],
+}
+
+book.call(swiss, 783, 'Swiss Cooper');
+console.log(swiss);
+
+// Apply method
+
+// the apply method does basically exactly the same thing. The only difference is that apply does not receive a list of arguments after the this keyword,
+//*** Apply method not use in modern javascript
+
+const flightData = [236, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData)
+
+
+
 
 
 

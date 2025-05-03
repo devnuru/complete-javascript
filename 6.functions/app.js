@@ -111,9 +111,6 @@ function count() {
 
 */
 
-
-
-
 // Functions Accepting Callback Functions
 /*
 
@@ -148,7 +145,6 @@ document.body.addEventListener('click', heyDevnuru);
 
 */
 
-
 //Functions Returning Functions
 
 /*
@@ -181,11 +177,13 @@ const lufthansa = {
   iataCode: 'LH',
   bookings: [],
   // book: function(flightNum, name) {}
-  book(flightNum, name){
-    console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
 
     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-  }
+  },
 };
 
 lufthansa.book(623, 'Md. Nuruzzaman Chowdhury');
@@ -195,14 +193,13 @@ console.log(lufthansa);
 const eurowings = {
   airline: 'Eurowings',
   iataCode: 'EW',
-  bookings: []
-}
+  bookings: [],
+};
 
 const book = lufthansa.book;
 
 //Does not work
 // book(73, 'Sarah Williams');
-
 
 // Call method
 book.call(eurowings, 38, 'Sarah Williams');
@@ -215,7 +212,7 @@ const swiss = {
   airline: 'Swiss Air lines',
   iataCode: 'LX',
   bookings: [],
-}
+};
 
 book.call(swiss, 783, 'Swiss Cooper');
 console.log(swiss);
@@ -229,24 +226,32 @@ const flightData = [236, 'George Cooper'];
 book.apply(swiss, flightData);
 console.log(swiss);
 
-book.call(swiss, ...flightData)
+book.call(swiss, ...flightData);
+
+// * skipping bind method and challenge
+
+// *** Immediately Invoked Function Expressions (IIFE)
+
+// Normal
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// ** IIFE
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 623;
+})();
+// Not Work
+// console.log(isPrivate);
 
 
+(() => console.log('This will ALSO never run again'))();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{
+  const isPrivate = 783;
+ var notPrivate = 383;
+}
+// console.log(isPrivate);
+console.log(notPrivate);

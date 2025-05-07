@@ -255,3 +255,13 @@ runOnce();
 }
 // console.log(isPrivate);
 console.log(notPrivate);
+
+
+
+// *********** Closures
+
+// A closure in JavaScript is a function that remembers the variables from its outer (enclosing) function scope, even after the outer function has finished executing.
+
+// ** 🔑 Key Concept:
+
+// A closure gives you access to an outer function’s variables from an inner function, even after the outer function has returned.

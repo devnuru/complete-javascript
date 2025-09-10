@@ -112,3 +112,20 @@ console.log([...arr, ...arr2]);
 
 //Join Method
 console.log(letters.join('-'));
+
+// At method
+
+const arrAt = [33, 73, 90];
+console.log(arrAt[0]);
+console.log(arrAt.at(0));
+
+// Getting the last array element by traditional way 
+console.log(arrAt[arrAt.length - 1]);
+console.log(arrAt.slice(-1)[0]);
+
+// Getting the last array element by modern way 
+console.log(arrAt.at(-1));
+
+// At method also work on string 
+console.log('Devnuru'.at(0));
+console.log('Devnuru'.at(-1));

@@ -119,13 +119,38 @@ const arrAt = [33, 73, 90];
 console.log(arrAt[0]);
 console.log(arrAt.at(0));
 
-// Getting the last array element by traditional way 
+// Getting the last array element by traditional way
 console.log(arrAt[arrAt.length - 1]);
 console.log(arrAt.slice(-1)[0]);
 
-// Getting the last array element by modern way 
+// Getting the last array element by modern way
 console.log(arrAt.at(-1));
 
-// At method also work on string 
+// At method also work on string
 console.log('Devnuru'.at(0));
 console.log('Devnuru'.at(-1));
+
+// Looping Arrays: forEach
+const movementsPractice = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for(const movement of movementsPractice) {
+for (const [i, movement] of movementsPractice.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdraw ${Math.abs(movement)}`);
+  }
+}
+
+console.log('--------ForEach----------');
+movementsPractice.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: You withdraw ${Math.abs(movement)}`);
+  }
+});
+// 0: function(200)
+// 1: function(450)
+// 2: function(400)
+// .....

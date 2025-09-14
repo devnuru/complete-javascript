@@ -155,80 +155,118 @@ movementsPractice.forEach(function (movement, index, array) {
 // 2: function(400)
 // .....
 
-  /// Map
+/// Map
 const currenciesPractices = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
-  
 ]);
 
-currenciesPractices.forEach(function(value, key, map) {
+currenciesPractices.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
-})
+});
 
 //Set
 const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
 console.log(currenciesUnique);
-currenciesUnique.forEach(function(value, _, map) {
- console.log(`${value}: ${value}`);
-})
-
-
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value}: ${value}`);
+});
 
 // Map method
 
 const eurToUsd = 1.1;
 
-const movementsUSD = movements.map(function(mov) {
-return mov * eurToUsd
-
-})
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
 
 console.log(movements);
 console.log(movementsUSD);
 
-const movementsUSDArrow = movements.map(mov => mov * eurToUsd)
+const movementsUSDArrow = movements.map(mov => mov * eurToUsd);
 
 console.log(movementsUSDArrow);
 
 // Using For of loop
 const movementsUSDfor = [];
-for(const mov of movements) movementsUSDfor.push(mov * eurToUsd)
-  console.log(movementsUSDfor);
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
 
-
-const movementsDescriptions = movements.map((mov, i) => 
-
-
-  `Movements ${i + 1}: You ${mov > 0 ? 'deposited' : 'Withdrew'} ${Math.abs(mov)}`
-
-
-
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movements ${i + 1}: You ${mov > 0 ? 'deposited' : 'Withdrew'} ${Math.abs(
+      mov
+    )}`
 
   // if (mov > 0) {
   //   return `Movement ${i + 1}: You deposited ${mov}`;
   // } else {
   //   return `Movements ${i + 1}: You withdrew ${Math.abs(mov)}`;
   // }
-)
+);
 
 console.log(movementsDescriptions);
 
-
 /// Filter Method
-const deposits = movements.filter(function(mov, i, arr) {
-return mov > 0;
-})
+const deposits = movements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
 console.log(movements);
 console.log(deposits);
 
-const depositsFor = []
-for(const mov of movements) if(mov > 0) depositsFor.push(mov)
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
 console.log(depositsFor);
 
-const withdrawals = movements.filter(mov => 
-  mov < 0
-)
+const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
 
+// reduce method  ========
+
+//The reduce() method in JavaScript is a powerful array method used to reduce an array to a single value (such as a sum, product, object, or even another array).
+
+//array.reduce(callback, initialValue);
+
+// •	callback → function executed on each element of the array.
+// •	initialValue → optional, the starting value for the reduction.
+
+// ✅ Callback Parameters:
+// callback(accumulator, currentValue, currentIndex, array)
+
+//	•	accumulator → stores the result of previous iterations.
+// •	currentValue → the current element being processed.
+// •	currentIndex → index of the current element.
+// •	array → the original array.
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum);
+
+console.log(movements);
+
+// accumulator -> SNOWBALL
+
+// const balance = movements.reduce(function(acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+// return acc + cur
+// }, 0)
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+// Maximum Value
+
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) {
+    return acc;
+  } else {
+    return mov;
+  }
+}, movements[0]);
+console.log(max);

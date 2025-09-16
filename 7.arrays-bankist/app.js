@@ -270,3 +270,59 @@ const max = movements.reduce((acc, mov) => {
   }
 }, movements[0]);
 console.log(max);
+
+ 
+// The find method
+
+// The find() method is an array method in JavaScript that returns the first element in the array that satisfies a given condition (callback function).
+
+// If no element matches, it returns undefined.
+
+
+// array.find(callback(element, index, array), thisArg);
+
+/*
+	callback → A function that runs on each element until it finds a match.
+	•	element → current element being processed
+	•	index → (optional) index of the element
+	•	array → (optional) the whole array
+	•	thisArg → (optional) value to use as this when executing callback.
+
+  */
+
+  const numbersFind = [3, 7, 8, 12, 19];
+
+const firstEven = numbersFind.find(num => num % 2 === 0);
+
+console.log(firstEven); // 8
+
+// 👉 It stops after finding the first match (8).
+
+const users = [
+  { id: 1, name: "Ali" },
+  { id: 2, name: "Sara" },
+  { id: 3, name: "John" }
+];
+
+const user = users.find(u => u.id === 2);
+
+console.log(user); // { id: 2, name: "Sara" }
+
+// 👉 Useful for finding objects by property.
+
+
+// When nothing is found
+
+const numbers = [5, 7, 9];
+
+const found = numbers.find(n => n > 10);
+
+console.log(found); // undefined
+
+/*
+✅ Key Points to Remember:
+	•	Returns first matching element, not all.
+	•	Returns undefined if no match.
+	•	Stops searching after the first match (efficient).
+
+  */

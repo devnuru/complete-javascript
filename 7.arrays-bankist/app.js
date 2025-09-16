@@ -326,3 +326,68 @@ console.log(found); // undefined
 	•	Stops searching after the first match (efficient).
 
   */
+
+
+
+  //🔹 What is findIndex()?
+
+  /*
+The findIndex() method returns the index of the first element in an array that satisfies a given condition (callback function).
+
+If no element matches, it returns -1.
+
+*/
+
+array.findIndex(callback(element, index, array), thisArg);
+
+
+/*
+callback → Function to test each element.
+	•	element → Current element being processed
+	•	index → (optional) Index of the element
+	•	array → (optional) The whole array
+	•	thisArg → (optional) Value to use as this inside callback.
+
+*/
+
+// 🔹 Example 1 – Find first even number’s index
+
+const numbersFindIndex = [3, 7, 8, 12, 19];
+
+const index = numbers.findIndex(num => num % 2 === 0);
+
+console.log(index); // 2   (because numbers[2] = 8)
+
+
+// 🔹 Example 2 – Find object index in array
+
+const usersFindIndex = [
+  { id: 1, name: "Ali" },
+  { id: 2, name: "Sara" },
+  { id: 3, name: "John" }
+];
+
+const indexFinder = users.findIndex(user => user.name === "Sara");
+
+console.log(indexFinder); // 1
+
+//  Example 3 – When no element matches
+
+
+const numbersNoEl = [5, 7, 9];
+
+const indexNoEl = numbersNoEl.findIndex(n => n > 10);
+
+console.log(indexNoEl); // -1
+
+
+/*
+✅ Key Points to Remember:
+	•	findIndex() → returns the index of first matching element.
+	•	find() → returns the element itself.
+	•	Both stop searching after the first match.
+	•	If no match → findIndex() gives -1, find() gives undefined.
+
+⸻
+
+*/
